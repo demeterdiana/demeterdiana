@@ -1734,7 +1734,7 @@ function buildPages(){
       add('', `<div class="pg art${k%2?' tint':''}">
           <div class="run"><span>Planșa ${r}</span><span>Demeter Diana</span></div>
           <div class="plate">${ART[t.art] || ART.heart}</div>
-          <p class="caption">${t.caption||''}</p></div>`, lab, key);
+          </div>`, lab, key);
       if(t.featured){ if(!featIdx) featIdx = starts[k]; featList.push(starts[k]); add('featurepg', featurePage(t), lab, key); }
       const chunks = paginate(t, k);
       chunks.forEach((c,j)=> add('', textShell(t, k, j === 0, c), lab, key));
