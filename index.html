@@ -141,7 +141,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;touch-
 .flow p.finale{text-indent:0!important;font-family:'Bodoni Moda',serif;font-style:italic;font-size:1.14em;line-height:1.4;color:var(--burgundy);text-align:left;margin-top:.9em;hyphens:none}
 .flow p.finale.cont{margin-top:0}
 .flow mark.hl{background:linear-gradient(transparent 58%,rgba(183,124,138,.28) 58%);color:var(--burgundy);padding:0 .05em}
-.flow p.verse .rf{color:var(--burgundy);font-family:'Bodoni Moda',serif;font-size:.96em}
+.flow p.verse .rf{color:inherit}
 .text .first.nodrop p:first-child::first-letter{all:unset}
 .flow p.split{text-align-last:justify}
 .flow:not(.first) p:first-child::first-letter{all:unset}
@@ -1657,8 +1657,6 @@ function paginate(t, k){
         if(fits() || !html.length){ html.push(el.outerHTML); queue.shift(); } break; }
       if(q.cont) el.className = 'cont';
       if(q.verse) el.classList.add('verse');
-      if(!q.verse && !q.cont && q.i > 0 && q.text.length <= 60) el.classList.add('beat');
-      if(!q.verse && !q.cont && q.last) el.classList.add('finale');
       let qt = q.text;
       if(/^\*[^*]+\*$/.test(qt)){ qt = qt.slice(1,-1); el.classList.add('it'); q.text = qt; q.it = true; }
       if(q.it) el.classList.add('it');
